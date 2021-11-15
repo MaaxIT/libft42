@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 14:26:50 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/06 13:42:21 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:55:16 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*ptr_result;
+	char	*result;
+	size_t	total;
 
-	ptr_result = malloc(count * size);
-	if (!ptr_result)
+	total = count * size;
+	result = malloc(total);
+	if (!result)
 		return ((void *)0);
-	ft_memset(ptr_result, 0, count * size);
-	return (ptr_result);
+	ft_memset(result, 0, total);
+	return (result);
 }

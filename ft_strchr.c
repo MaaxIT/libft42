@@ -6,17 +6,17 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 14:27:24 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/06 13:15:41 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/09 17:03:43 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char const *str, int c)
+char	*ft_strchr(char const *str, int ch)
 {
 	int				i;
 	unsigned char	search;
 
 	i = 0;
-	search = (unsigned char)c;
+	search = (unsigned char)ch;
 	while (str[i])
 	{
 		if (str[i] == search)

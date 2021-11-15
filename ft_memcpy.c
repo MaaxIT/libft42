@@ -6,22 +6,22 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 14:26:23 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/06 13:13:19 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:59:30 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t size)
 {
-	char		*s_dest;
-	char const	*s_src;
+	char		*dst_cpy;
+	char const	*src_cpy;
 
-	if (!dest && !src)
+	if (!dst && !src)
 		return ((void *)0);
-	s_dest = dest;
-	s_src = src;
-	while (n--)
-		*s_dest++ = *s_src++;
-	return (dest);
+	dst_cpy = dst;
+	src_cpy = src;
+	while (size--)
+		*dst_cpy++ = *src_cpy++;
+	return (dst);
 }

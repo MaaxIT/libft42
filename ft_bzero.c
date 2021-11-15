@@ -6,21 +6,19 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 14:27:48 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/06 13:12:07 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:54:03 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *str, size_t size)
 {
-	char	*str;
+	char	*str_cpy;
 	size_t	i;
 
 	i = 0;
-	str = s;
-	while (i < n)
-	{
-		str[i++] = '\0';
-	}
+	str_cpy = str;
+	while (i < size)
+		str_cpy[i++] = '\0';
 }

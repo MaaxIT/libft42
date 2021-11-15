@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:43:31 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/06 14:56:52 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:14:50 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else
+	long long int	final;
+
+	final = n;
+	if (final < 0)
 	{
-		if (n < 0)
-		{
-			ft_putchar_fd('-', fd);
-			n *= -1;
-		}
-		if (n >= 9)
-			ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(((n % 10) + '0'), fd);
+		final *= -1;
+		ft_putchar_fd('-', fd);
 	}
+	if (final > 9)
+	{
+		ft_putnbr_fd((final / 10), fd);
+		ft_putchar_fd((final % 10 + '0'), fd);
+	}
+	else
+		ft_putchar_fd((final + '0'), fd);
 }

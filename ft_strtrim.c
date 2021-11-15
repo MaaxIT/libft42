@@ -6,20 +6,20 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:13:37 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/06 15:29:38 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/09 17:15:08 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strtrim_char_included(char const *set, char to_find)
+static int	ft_char_included(char const *set, char ch)
 {
 	size_t	i;
 
 	i = 0;
 	while (set[i])
 	{
-		if (to_find == set[i])
+		if (ch == set[i])
 			return (1);
 		i++;
 	}
@@ -35,9 +35,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	startpos = 0;
 	endpos = ft_strlen((char *)s1);
-	while (s1[startpos] && ft_strtrim_char_included(set, s1[startpos]))
+	while (s1[startpos] && ft_char_included(set, s1[startpos]))
 		startpos++;
-	while (ft_strtrim_char_included(set, s1[endpos - 1]) && endpos > startpos)
+	while (ft_char_included(set, s1[endpos - 1]) && endpos > startpos)
 		endpos--;
 	final = (char *)malloc((endpos - startpos + 1) * sizeof(char));
 	if (!final)

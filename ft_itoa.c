@@ -6,49 +6,51 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:05:10 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/08 19:53:39 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/09 18:47:59 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_itoa_digits(int n)
+static size_t	ft_count_digits(int nbr)
 {
 	size_t	i;
 
 	i = 1;
-	if (n < 0)
+	if (nbr < 0)
 	{
-		n *= -1;
+		nbr *= -1;
 		i++;
 	}
-	while (n > 9)
+	while (nbr > 9)
 	{
-		n /= 10;
+		nbr /= 10;
 		i++;
 	}
 	return (i);
 }
 
-static void	ft_itoa_putnbr(long n, char *s, int *i)
+static void	ft_writenbr(long nbr, char *str, int *i)
 {
-	if (n <= 9)
-		s[(*i)++] = n + '0';
+	if (nbr <= 9)
+		str[(*i)++] = nbr + '0';
 	else
 	{
-		ft_itoa_putnbr(n / 10, s, i);
-		ft_itoa_putnbr(n % 10, s, i);
+		ft_writenbr(nbr / 10, str, i);
+		ft_writenbr(nbr % 10, str, i);
 	}
 }
 
 char	*ft_itoa(int n)
 {
-	char	*final;
-	int		i;
-	long	long_n;
+	char		*final;
+	int			i;
+	long long	long_n;
 
 	long_n = n;
-	final = malloc(sizeof(char) * (ft_itoa_digits(long_n) + 1));
+	if (long_n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	final = malloc(sizeof(char) * (ft_count_digits(long_n) + 1));
 	if (!final)
 		return ((char *)0);
 	i = 0;
@@ -57,7 +59,7 @@ char	*ft_itoa(int n)
 		final[i++] = '-';
 		long_n *= -1;
 	}
-	ft_itoa_putnbr(long_n, final, &i);
+	ft_writenbr(long_n, final, &i);
 	final[i] = '\0';
 	return (final);
 }

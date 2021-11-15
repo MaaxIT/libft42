@@ -6,11 +6,10 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:39:29 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/09 16:30:18 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/09 17:30:44 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)

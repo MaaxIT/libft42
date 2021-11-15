@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 14:29:47 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/09 16:29:56 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/09 17:28:41 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_strdup(char const *str)
 {
 	size_t	i;
+	size_t	str_len;
 	char	*ptr;
 
 	str_len = ft_strlen((char *)str);
