@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 14:13:37 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/09 17:15:08 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/15 12:54:15 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	endpos;
 	char	*final;
 
+	if (!s1 || !set)
+		return ((char *)0);
 	startpos = 0;
 	endpos = ft_strlen((char *)s1);
 	while (s1[startpos] && ft_char_included(set, s1[startpos]))

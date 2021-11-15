@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:20:33 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/09 17:18:05 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/15 12:58:37 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*new;
 
+	if (!s || !f)
+		return ((char *)0);
 	new = malloc(ft_strlen((char *)s) + 1 * sizeof(char));
 	if (!new)
 		return ((char *)0);

@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:43:23 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/09 19:09:10 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:03:07 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*head;
 	t_list	*backup;
 
-	if (!lst)
+	if (!lst || !*lst)
 		return ;
 	head = *lst;
 	while (head)

@@ -6,11 +6,11 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 14:27:41 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/10/06 14:27:42 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/15 12:43:44 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int ch)
 {
-	return ((ch >= 97 && ch <= 122) || (ch >= 65 && ch <= 90));
+	return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
 }

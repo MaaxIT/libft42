@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 20:54:15 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/09 16:39:02 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:10:26 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	void	*res;
 
 	new = NULL;
-	if (!f)
+	if (!lst || !f)
 		return (new);
 	while (lst)
 	{
@@ -30,7 +30,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&new, loop_element);
 		lst = lst->next;
 	}
-	if (del)
-		ft_lstclear(&lst, del);
+	ft_lstclear(&lst, del);
 	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:39:29 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/09 17:30:44 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:23:36 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
+	if (!fd)
+		return ;
 	write(fd, &c, 1);
 }

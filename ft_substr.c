@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 18:05:13 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/09 17:33:21 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/15 12:51:58 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	total_size;
 	char			*sub;
 
+	if (!s)
+		return ((char *)0);
 	total_size = 0;
 	if (start > ft_strlen((char *)s))
 	{

@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:43:33 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/02 17:43:34 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:10:34 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_lstsize(t_list *lst)
 {
 	size_t	size;
 
+	if (!lst)
+		return (0);
 	size = 0;
 	while (lst)
 	{
