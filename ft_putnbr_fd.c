@@ -6,7 +6,7 @@
 /*   By: mpeharpr <mpeharpr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 12:43:31 by mpeharpr          #+#    #+#             */
-/*   Updated: 2021/11/15 12:59:49 by mpeharpr         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:43:45 by mpeharpr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long long int	final;
 
-	if (!n || !fd)
+	if (!fd)
 		return ;
 	final = n;
 	if (final < 0)
